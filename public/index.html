@@ -9,38 +9,48 @@
   <body>
     <div id="root"></div>
   </body>
-  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn({ text, world, big }) {
-      console.log(text, big);
+    function Btn({ text, onClick, fontSize }) {
       return (
         <button
+          onClick={onClick}
           style={{
             backgroundColor: "tomato",
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 10
+            borderRadius: 10,
+            fontSize
           }}
         >
           {text}
-          <br />
-          {world}
         </button>
       );
     }
-
+    Btn.propTypes = {
+      text: PropTypes.string.isRequired,
+      fontSize: PropTypes.number
+    };
     function APP() {
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => setValue("Revert Changes");
+
       return (
         <div>
-          <Btn text="Save Changes" world="beautiful" big={true} />
-          <Btn text="Continue" world="littlebit sad" />
+          <Btn text={value} onClick={changeValue} fontSize={14} />
+          <Btn text="Continue" fontSize={20} />
         </div>
       );
     }
     const root = document.getElementById("root");
     ReactDOM.render(<APP />, root);
   </script>
+
+  <!-- cdoe line 44: 해당 Btn onClick은 단지 prop이다. eventlistner이 아니다.-->
+  <!-- cdoe line 44,45: 해당 Btn 앞에 Memorized를 사용함으로써 rerender가 필요 없는 요소는 동작하지 않는다. .-->
+  <!-- cdoe line 34: 선언 prop에 type형이 알맞는지 세팅해주는 선언문 (prop.type url필요) .-->
 </html>
