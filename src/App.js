@@ -3,44 +3,32 @@ import styles from "./App.module.css";
 
 import { useState, useEffect } from "react"; /* State 선언 */
 
-/* Use Effect function은 코드가 딱 한번만 실행될 수 있도록 보호해준다.
-  2개 component 사용 useEffect( function , [state.data] <-리액트가 지켜봐야할 대상) */
-function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState("");
-  const onClick = () => setValue((before) => before + 1);
-  const onChange = (event) => setKeyword(event.target.value);
-  console.log("i run all time");
+function Hello() {
+  /* Clean up function */
   useEffect(() => {
-    console.log("Call the API");
+    console.log("Created :)");
+    return () => console.log("destroyed");
   }, []);
   useEffect(() => {
-    if (keyword !== "" && keyword.length > 5) {
-      console.log("Search for", keyword);
-    }
-  }, [keyword]);
+    console.log("hi");
+    return () => {
+      console.log("bye");
+    };
+  });
+  return <h1> Hello</h1>;
+}
 
-  useEffect(() => {
-    console.log("Counter :", counter);
-  }, [counter]);
-
-  useEffect(() => {
-    console.log("I run keyword & counter change");
-  }, [keyword, counter]);
-  /* [] <= dependency(리액트가 지켜봐야할 대상
-    []만 있을 시 한번만 호출 | []안에 state.data값이 들어있을시 해당 data가 동작하면 출력 */
+function App() {
+  const [showing, setShowing] = useState("false");
+  const onClick = () => {
+    setShowing((prev) => !prev);
+  };
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search here"
-        value={keyword}
-        onChange={onChange}
-      />
-      <h1 className={styles.title}>{counter}</h1>
-      <button onClick={onClick}>Click me</button>
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
     </div>
   );
 }
-/* */
+
 export default App;
