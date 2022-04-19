@@ -9,13 +9,20 @@
 |   React    |           Prop-1            | <a href="https://github.com/Y00NMIN/Nomad-React-MovieWeb/commit/23968afb910ce08b501fcb0461d308a777a96563">📄</a> |
 |   React    |           Prop-2            | <a href="https://github.com/Y00NMIN/Nomad-React-MovieWeb/commit/e44545b0e172fa1aeee9117503c6cf62f6e0ffad">📄</a> |
 |   React    |           Effect            | <a href="https://github.com/Y00NMIN/Nomad-React-MovieWeb/commit/6e97a04d25ccd6577bdad8eaf2518f5f5de2becf">📄</a> |
-|   React    | Effect-2(Clean up function) | <a href="https://github.com/Y00NMIN/Nomad-React-MovieWeb/commit/6e97a04d25ccd6577bdad8eaf2518f5f5de2becf">📄</a> |
+|   React    | Effect-2(Clean up function) | <a href="https://github.com/Y00NMIN/Nomad-React-MovieWeb/commit/32e590620ee2777b5674e274cd8005762eb2f926">📄</a> |
 
-#### 🏆🏆Create Convert (convert hours to minutes / kil)
+##### 🏆🏆2022 .04. 18 Finish to Study 🏆🏆
 
-![Convert Selector page](ProjectImg/convert3.png)  
+#### 💡💡Create Convert (convert hours to minutes / kil)
+
+![Convert Selector page](ProjectImg/convert3.png)
 Convert Selector page
 ![KM & Miles Convert](ProjectImg/convert1.png)  
 KM & Miles Convert
 ![Hours & Minutes Convert](ProjectImg/convert2.png)  
 Hours & Minutes Convert
+
+#### 💡💡Create To do List React.ver
+
+![To do list](ProjectImg/todo.png)  
+To do List
