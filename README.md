@@ -9,9 +9,7 @@
 이 레포지는 개인 공부 공간입니다!🖋
 
 > 출처: [**Nomadcoder github open source**](https://github.com/serranoarevalo) 노마드코더님께 감사합니다.🙌
-
-## 🏆Study List
-
-### [ 🥇 Study React! ](./Study.md)
-
-## 🏆Project(Use to React: 🎥📲Movie web service)
+  
+### 🏆Study List: [ 🌱 Study React! ](./Study.md)
+  
+### 🏆Main Project: ✨Movie WEB
